@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>王小明 — 設計師 · 開發者</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f6f5f3;
+      --text: #1a1a18;
+      --text-secondary: #5a5955;
+      --text-tertiary: #999890;
+      --border: rgba(0,0,0,0.12);
+      --border-hover: rgba(0,0,0,0.28);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1a18;
+        --bg-secondary: #242422;
+        --text: #f0efe9;
+        --text-secondary: #a8a79f;
+        --text-tertiary: #6a6960;
+        --border: rgba(255,255,255,0.12);
+        --border-hover: rgba(255,255,255,0.28);
+      }
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    main { width: 100%; max-width: 680px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: var(--text-secondary);
+      flex-shrink: 0;
+    }
+
+    .job-title {
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 0.6rem;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 em { font-style: italic; color: var(--text-secondary); }
+
+    .bio {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      max-width: 480px;
+    }
+
+    hr {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 0 0 2rem;
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2.5rem;
+    }
+
+    .skill {
+      font-size: 13px;
+      padding: 5px 14px;
+      border: 0.5px solid var(--border);
+      border-radius: 100px;
+      color: var(--text-secondary);
+      font-weight: 400;
+      transition: background 0.15s;
+      cursor: default;
+    }
+
+    .skill:hover { background: var(--bg-secondary); }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+
+    .card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      transition: border-color 0.15s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .card:hover { border-color: var(--border-hover); }
+
+    .card-tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .card-title { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .contact { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .btn {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 8px 20px;
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      font-weight: 400;
+      transition: background 0.15s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .btn:hover { background: var(--bg-secondary); }
+
+    .btn.primary {
+      background: var(--text);
+      color: var(--bg);
+      border-color: transparent;
+    }
+
+    .btn.primary:hover { opacity: 0.82; }
+
+    @media (max-width: 520px) {
+      body { padding: 2.5rem 1.25rem; }
+      .hero { grid-template-columns: 1fr; }
+      .avatar { display: none; }
+      h1 { font-size: 36px; }
+      .projects { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <section class="hero">
+      <div>
+        <p class="job-title">設計師 · 開發者</p>
+        <h1>王小明<br><em>Ming Wang</em></h1>
+        <p class="bio">我熱衷於打造兼具美感與功能的數位產品，擅長介面設計與前端開發，喜歡在創意與邏輯之間找到最佳平衡。目前尋求全職設計／開發職缺。</p>
+      </div>
+      <div class="avatar">王</div>
+    </section>
+
+    <hr />
+
+    <p class="label">技能專長</p>
+    <div class="skills">
+      <span class="skill">UI / UX 設計</span>
+      <span class="skill">React</span>
+      <span class="skill">TypeScript</span>
+      <span class="skill">Figma</span>
+      <span class="skill">Node.js</span>
+      <span class="skill">品牌識別</span>
+      <span class="skill">原型製作</span>
+    </div>
+
+    <hr />
+
+    <p class="label">精選作品</p>
+    <div class="projects">
+      <a class="card" href="#">
+        <p class="card-tag">2024 · Web App</p>
+        <p class="card-title">任務管理平台</p>
+        <p class="card-desc">以 React + TypeScript 打造，支援拖曳排序與即時協作功能。</p>
+      </a>
+      <a class="card" href="#">
+        <p class="card-tag">2024 · 品牌設計</p>
+        <p class="card-title">新創品牌識別</p>
+        <p class="card-desc">從 Logo 到設計系統，建立完整一致的視覺語言。</p>
+      </a>
+      <a class="card" href="#">
+        <p class="card-tag">2023 · Mobile</p>
+        <p class="card-title">健康追蹤 App</p>
+        <p class="card-desc">iOS / Android 雙平台設計，以資料視覺化為核心體驗。</p>
+      </a>
+    </div>
+
+    <hr />
+
+    <p class="label">聯絡方式</p>
+    <div class="contact">
+      <a class="btn primary" href="resume.pdf" download>下載履歷 ↗</a>
+      <a class="btn" href="mailto:ming@example.com">ming@example.com</a>
+      <a class="btn" href="https://linkedin.com/in/mingwang" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://github.com/mingwang" target="_blank">GitHub</a>
+    </div>
+
+  </main>
+</body>
+</html>
