@@ -1,264 +1,162 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>王小明 — 設計師 · 開發者</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人自我介紹</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    :root {
-      --bg: #ffffff;
-      --bg-secondary: #f6f5f3;
-      --text: #1a1a18;
-      --text-secondary: #5a5955;
-      --text-tertiary: #999890;
-      --border: rgba(0,0,0,0.12);
-      --border-hover: rgba(0,0,0,0.28);
-    }
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #1a1a18;
-        --bg-secondary: #242422;
-        --text: #f0efe9;
-        --text-secondary: #a8a79f;
-        --text-tertiary: #6a6960;
-        --border: rgba(255,255,255,0.12);
-        --border-hover: rgba(255,255,255,0.28);
-      }
-    }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      padding: 4rem 2rem;
-    }
+        header {
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
 
-    main { width: 100%; max-width: 680px; }
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #fff;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #4f46e5;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: start;
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
 
-    .avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: var(--bg-secondary);
-      border: 0.5px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'DM Serif Display', serif;
-      font-size: 28px;
-      color: var(--text-secondary);
-      flex-shrink: 0;
-    }
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
 
-    .job-title {
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 0.6rem;
-    }
+        section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
 
-    h1 {
-      font-family: 'DM Serif Display', serif;
-      font-size: 44px;
-      font-weight: 400;
-      line-height: 1.1;
-      margin-bottom: 1.25rem;
-    }
+        section:last-child {
+            border-bottom: none;
+        }
 
-    h1 em { font-style: italic; color: var(--text-secondary); }
+        h2 {
+            color: #4f46e5;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
 
-    .bio {
-      font-size: 15px;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--text-secondary);
-      max-width: 480px;
-    }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
 
-    hr {
-      border: none;
-      border-top: 0.5px solid var(--border);
-      margin: 0 0 2rem;
-    }
+        .skills-list li {
+            background: #eef2ff;
+            color: #4338ca;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
 
-    .label {
-      font-size: 11px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
+        .social-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 2.5rem;
-    }
+        .social-links a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .skill {
-      font-size: 13px;
-      padding: 5px 14px;
-      border: 0.5px solid var(--border);
-      border-radius: 100px;
-      color: var(--text-secondary);
-      font-weight: 400;
-      transition: background 0.15s;
-      cursor: default;
-    }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
 
-    .skill:hover { background: var(--bg-secondary); }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin-bottom: 2.5rem;
-    }
-
-    .card {
-      background: var(--bg);
-      border: 0.5px solid var(--border);
-      border-radius: 12px;
-      padding: 1.1rem 1.25rem;
-      transition: border-color 0.15s;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .card:hover { border-color: var(--border-hover); }
-
-    .card-tag {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-tertiary);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-
-    .card-title { font-size: 15px; font-weight: 500; margin-bottom: 0.4rem; }
-
-    .card-desc {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      font-weight: 300;
-    }
-
-    .contact { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .btn {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      padding: 8px 20px;
-      border: 0.5px solid var(--border);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      font-weight: 400;
-      transition: background 0.15s;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .btn:hover { background: var(--bg-secondary); }
-
-    .btn.primary {
-      background: var(--text);
-      color: var(--bg);
-      border-color: transparent;
-    }
-
-    .btn.primary:hover { opacity: 0.82; }
-
-    @media (max-width: 520px) {
-      body { padding: 2.5rem 1.25rem; }
-      .hero { grid-template-columns: 1fr; }
-      .avatar { display: none; }
-      h1 { font-size: 36px; }
-      .projects { grid-template-columns: 1fr; }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            color: #777;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
-  <main>
 
-    <section class="hero">
-      <div>
-        <p class="job-title">後端程式開發</p>
-        <h1>葉彥廷<br><em>YE Yan Ting</em></h1>
-        <p class="bio">我熱衷於打造兼具美感與功能的網站或app，擅長後端端開發，喜歡在創意與邏輯之間找到最佳平衡。目前尋求後端程式開發職缺。</p>
-      </div>
-      <div class="avatar">葉</div>
-    </section>
+    <div class="container">
+        <!-- 頭部個人資訊 -->
+        <header>
+            <div class="avatar">👨‍💻</div>
+            <h1>你的名字 (Your Name)</h1>
+            <p>職稱 / 現職角色（如：前端工程師 / 產品設計師）</p>
+        </header>
 
-    <hr />
+        <!-- 個人簡介 -->
+        <section>
+            <h2>關於我</h2>
+            <p>熱愛學習與分享，擁有 X 年的相關領域經驗。擅長解決問題、優化流程，並持續探索新技術與創意思維。休閒時間喜歡閱讀、攝影與旅行。</p>
+        </section>
 
-    <p class="label">技能專長</p>
-    <div class="skills">
-      <span class="skill">Java</span>
-      <span class="skill">Python</span>
-      <span class="skill">C#</span>
-      <span class="skill">C++</span>
-      <span class="skill">AI</span>
-      <span class="skill">品牌識別</span>
-      <span class="skill">原型製作</span>
+        <!-- 專業技能 -->
+        <section>
+            <h2>專業技能</h2>
+            <ul class="skills-list">
+                <li>JavaScript / HTML / CSS</li>
+                <li>UI/UX 設計</li>
+                <li>專案管理</li>
+                <li>問題解決能力</li>
+                <li>團隊協作</li>
+            </ul>
+        </section>
+
+        <!-- 聯絡方式 / 社群連結 -->
+        <section>
+            <h2>社群與聯絡</h2>
+            <ul class="social-links">
+                <li><a href="mailto:your.email@example.com">Email</a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+            </ul>
+        </section>
+
+        <!-- 頁尾 -->
+        <footer>
+            &copy; 2026 Your Name. All rights reserved.
+        </footer>
     </div>
 
-    <hr />
-
-    <p class="label">精選作品</p>
-    <div class="projects">
-      <a class="card" href="#">
-        <p class="card-tag">2024 · Web App</p>
-        <p class="card-title">任務管理平台</p>
-        <p class="card-desc">以 React + TypeScript 打造，支援拖曳排序與即時協作功能。</p>
-      </a>
-      <a class="card" href="#">
-        <p class="card-tag">2024 · 品牌設計</p>
-        <p class="card-title">新創品牌識別</p>
-        <p class="card-desc">從 Logo 到設計系統，建立完整一致的視覺語言。</p>
-      </a>
-      <a class="card" href="#">
-        <p class="card-tag">2023 · Mobile</p>
-        <p class="card-title">健康追蹤 App</p>
-        <p class="card-desc">iOS / Android 雙平台設計，以資料視覺化為核心體驗。</p>
-      </a>
-    </div>
-
-    <hr />
-
-    <p class="label">聯絡方式</p>
-    <div class="contact">
-      <a class="btn primary" href="resume.pdf" download>下載履歷 ↗</a>
-      <a class="btn" href="mailto:ming@example.com">ming@example.com</a>
-      <a class="btn" href="https://linkedin.com/in/mingwang" target="_blank">LinkedIn</a>
-      <a class="btn" href="https://github.com/mingwang" target="_blank">GitHub</a>
-    </div>
-
-  </main>
 </body>
 </html>
