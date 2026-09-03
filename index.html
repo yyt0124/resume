@@ -69,10 +69,62 @@
 
         h2 {
             color: #4f46e5;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 1.4rem;
         }
 
+        /* 經歷與學歷 時間軸樣式 */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #eef2ff;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: #4f46e5;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #1f2937;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.95rem;
+            color: #4f46e5;
+            margin-bottom: 4px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: #4b5563;
+        }
+
+        /* 技能標籤 */
         .skills-list {
             display: flex;
             flex-wrap: wrap;
@@ -89,6 +141,7 @@
             font-weight: 500;
         }
 
+        /* 社群連結 */
         .social-links {
             display: flex;
             gap: 15px;
@@ -120,25 +173,70 @@
         <!-- 頭部個人資訊 -->
         <header>
             <div class="avatar">👨‍💻</div>
-            <h1>葉彥廷(Ray)</h1>
+            <h1>你的名字 (Your Name)</h1>
             <p>職稱 / 現職角色（如：前端工程師 / 產品設計師）</p>
         </header>
 
         <!-- 個人簡介 -->
         <section>
             <h2>關於我</h2>
-            <p>熱愛學習與分享，擁有 X 年的相關領域經驗。擅長解決問題、優化流程，並持續探索新技術與創意思維。休閒時間喜歡玩手機和電腦遊戲、騎車與看棒球啦啦隊。</p>
+            <p>熱愛學習與分享，擁有 X 年的相關領域經驗。擅長解決問題、優化流程，並持續探索新技術與創意思維。休閒時間喜歡閱讀、攝影與旅行。</p>
+        </section>
+
+        <!-- 工作經歷 -->
+        <section>
+            <h2>工作經歷</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">資深前端工程師</div>
+                    <div class="timeline-subtitle">ABC 科技股份有限公司</div>
+                    <div class="timeline-date">2022 年 3 月 – 現職</div>
+                    <div class="timeline-desc">
+                        主導公司核心產品前端架構重構，提升網頁載入速度 40%；負責跨部門溝通與程式碼審查（Code Review）。
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-title">網頁開發工程師</div>
+                    <div class="timeline-subtitle">XYZ 數位行銷有限公司</div>
+                    <div class="timeline-date">2020 年 7 月 – 2022 年 2 月</div>
+                    <div class="timeline-desc">
+                        開發與維護多個客戶響應式網站，並與 UI/UX 設計師合作完成動態視覺效果。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 學歷背景 -->
+        <section>
+            <h2>學歷背景</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-title">資訊工程研究所 碩士</div>
+                    <div class="timeline-subtitle">國立OO大學</div>
+                    <div class="timeline-date">2018 年 9 月 – 2020 年 6 月</div>
+                    <div class="timeline-desc">
+                        主修人工智慧與資料分析，碩士論文聚焦於機器學習應用。
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-title">資訊管理學系 學士</div>
+                    <div class="timeline-subtitle">OO大學</div>
+                    <div class="timeline-date">2014 年 9 月 – 2018 年 6 月</div>
+                </div>
+            </div>
         </section>
 
         <!-- 專業技能 -->
         <section>
             <h2>專業技能</h2>
             <ul class="skills-list">
-                <li>後端程式 Java/C#/C++/Python</li>
-                <li>專案管理</li>
-                <li>問題解決能力</li>
-                <li>團隊協作</li>
-                <li>AI人工智慧</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React / Vue.js</li>
+                <li>HTML5 / CSS3 / Tailwind CSS</li>
+                <li>Git / GitHub</li>
+                <li>UI/UX 設計概念</li>
             </ul>
         </section>
 
@@ -146,7 +244,7 @@
         <section>
             <h2>社群與聯絡</h2>
             <ul class="social-links">
-                <li><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">Email</a></li>
+                <li><a href="mailto:your.email@example.com">Email</a></li>
                 <li><a href="https://github.com" target="_blank">GitHub</a></li>
                 <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
             </ul>
